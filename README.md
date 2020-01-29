@@ -14,4 +14,4 @@ Developers: Conversational AI - Alexa or Google Home project ( server-side JavaS
 
 1. [BitDegree](https://www.bitdegree.org/tutorials/what-is-javascript-used-for/)
 
-2.
+2.[]
