@@ -14,16 +14,16 @@ Developers: Conversational AI - Alexa or Google Home project ( server-side JavaS
 
 ## GOOGLE HOME
 
-<<<<<<< HEAD
 Google has developed speakers which respond to voice recognition and in-turn provide user to machine interaction. 
 =======
 Google has developed speakers which respond to voice recognition.
+
 ## GROUP MEMBERS
+
 1. Annie Chandolu
 2. Alekhya Jaddu
 3. Sushma Chanati
 4. Gundu Pooja
->>>>>>> 6d63c8fede109165f47c4227bce66ec87ada54b3
 
 ### RESOURCES
 
