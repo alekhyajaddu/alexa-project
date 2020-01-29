@@ -9,3 +9,9 @@ Developers: Conversational AI - Alexa or Google Home project ( server-side JavaS
 - JavaScript is an object orient programming language designed to make web development easier and more attractive. 
 - In most cases, JavaScript is used to create responsive, interactive elements for web pages, enhancing the user experience.
 - The only programming language supported by almost all of the popular browsers.
+
+### RESOURCES
+
+1. [BitDegree](https://www.bitdegree.org/tutorials/what-is-javascript-used-for/)
+
+2.
