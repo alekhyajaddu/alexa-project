@@ -14,10 +14,10 @@ Developers: Conversational AI - Alexa or Google Home project ( server-side JavaS
 
 ## GOOGLE HOME
 
-Google has developed speakers which respond to voice recognition.
+Google has developed speakers which respond to voice recognition and in-turn provide user to machine interaction. 
 
 ### RESOURCES
 
 1. [BitDegree](https://www.bitdegree.org/tutorials/what-is-javascript-used-for/)
 
-2.
+2. [Google home wiki](https://en.wikipedia.org/wiki/Google_Home)
