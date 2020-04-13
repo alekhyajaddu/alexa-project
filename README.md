@@ -1,7 +1,7 @@
 # alexa-google-home-project
 Developers: Conversational AI - Alexa or Google Home project ( server-side JavaScript)
 
-#ALEXA - GOOGLE HOME PROJECT
+# ALEXA - GOOGLE HOME PROJECT
 
 ![IMAGE]( https://target.scene7.com/is/image/Target/GUEST_9b10b6e0-3d26-4172-a29d-e87d771b8583?wid=488&hei=488&fmt=pjpeg)
 [image source](https://github.com/alekhyajaddu/alexa-google-home-project)
@@ -14,8 +14,12 @@ Developers: Conversational AI - Alexa or Google Home project ( server-side JavaS
 
 ## GOOGLE HOME
 
+Google has developed speakers which respond to voice recognition and in-turn provide user to machine interaction. 
+
 Google has developed speakers which respond to voice recognition.
+
 ## GROUP MEMBERS
+
 1. Annie Chandolu
 2. Alekhya Jaddu
 3. Sushma Chanati
@@ -25,4 +29,4 @@ Google has developed speakers which respond to voice recognition.
 
 1. [BitDegree](https://www.bitdegree.org/tutorials/what-is-javascript-used-for/)
 
-2.
+2. [Google home wiki](https://en.wikipedia.org/wiki/Google_Home)
