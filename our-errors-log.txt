@@ -1,0 +1,19 @@
+PS C:\Users\S538306\Documents\563\alexa-google-home-project> npm install package.json
+npm WARN deprecated package.json@2.0.1: Use pkg.json instead.
+npm WARN saveError ENOENT: no such file or directory, open 'C:\Users\S538306\Documents\563\alexa-google-home-project\package.json'      
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN notsup Unsupported engine for got@5.7.1: wanted: {"node":">=0.10.0 <7"} (current: {"node":"13.13.0","npm":"6.14.4"})
+npm WARN notsup Not compatible with your version of node/npm: got@5.7.1
+npm WARN enoent ENOENT: no such file or directory, open 'C:\Users\S538306\Documents\563\alexa-google-home-project\package.json'
+npm WARN alexa-google-home-project No description
+npm WARN alexa-google-home-project No repository field.
+npm WARN alexa-google-home-project No README data
+npm WARN alexa-google-home-project No license field.
+
++ package.json@2.0.1
+added 74 packages from 36 contributors and audited 162 packages in 11.176s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
