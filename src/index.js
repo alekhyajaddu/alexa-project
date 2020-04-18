@@ -190,9 +190,9 @@ function onIntent(intentRequest, session, callback) {
     } else if(intentName == "AMAZON.FallbackIntent"){
         handleFallbackResponse(intent,session,callback)
     }else if(intentName == "AMAZON.CancelIntent"){
-        handleCancelResponse(intent,session,callback)
+        handleFinishSessionRequest(intent, session, callback)
     }else if(intentName == "AMAZON.StopIntent"){
-        handleStopResponse(intent,session,callback)
+        handleFinishSessionRequest(intent, session, callback)
     }else if(intentName == "AMAZON.NavigateHomeIntent"){
         handleNavigateHomeResponse(intent,session,callback)
     }else{
@@ -216,7 +216,7 @@ function onSessionEnded(sessionEndedRequest, session) {
 // ------- Skill specific logic -------
 
 function getWelcomeResponse(callback) {
-    var speechOutput = "Welcome! Do you want to get some information about the followinf events:"
+    var speechOutput = "Welcome! Do you want to get some information about the following events:"
     + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
 
     var reprompt = "Do you want to hear about some information on the events, KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour.?"
@@ -318,13 +318,13 @@ function handleFallbackResponse(intent,session,callback){
     callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
 
 }
-
+/*
 function handleCancelResponse(intent,session,callback){
     let speechOutput="Welcome to the Cancel module, the application will end now. Have a nice day!"
     let repromptText=speechOutput
     let shouldEndSession = true
 
-    callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
+    buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession);
 
 }
 
@@ -333,17 +333,27 @@ function handleStopResponse(intent,session,callback){
     let repromptText=speechOutput
     let shouldEndSession = true
 
-    callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
+    buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession);
 
-}
+}*/
 
 function handleNavigateHomeResponse(intent,session,callback){
+    if (!session.attributes){
+        session.attributes={};
+    }
+
     let speechOutput="You wanna go home? You will be redirected to the description intent."
     let repromptText=speechOutput
     let shouldEndSession = false
 
     callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
 
+}
+
+function handleFinishSessionRequest(intent, session, callback) {
+    // End the session with a "Good bye!" if the user wants to quit the game
+    callback(session.attributes,
+        buildSpeechletResponseWithoutCard("Good bye!", "", true));
 }
 
 function handleGetInfoIntent(intent, session, callback) {
