@@ -3,10 +3,217 @@
 
 const Alexa = require("ask-sdk");
 const https = require("https");
+const location = require('./eventsInput.json')
 
-
-
+const 
 const invocationName = "event";
+
+function getNext(now, location) {
+    console.log('Entering getNext: ' + now + ' ' + location);
+    const ls = (location === null) ? "" : location;
+    let ans = 'There are no more ' + gender + ' ' + sport + ' games in the current schedule. ';
+    for (let j = 0; j < games.length; j++) {
+      const item = games[j];
+      const p = item.gamelocation;
+      const i = item.gamedate;
+      const d = new Date(i.year, i.month - 1, i.day, i.hour, i.minute, 0);
+      const t = (0 === i.hour) ? "a time to be determined" : d.toLocaleTimeString('en-US')
+      if (d > now) {
+        if (location == null) {
+          ans = 'The next ' + gender + ' ' + sport + ' game is ' + d.toDateString() + ' at ' + t + ' in ' + p + ".";
+          return ans;
+        }
+        else if (location === home && (p === home || p === homecity)) {
+          ans = 'The next ' + gender + ' ' + sport + ' ' + ls + ' game is ' + d.toDateString() + ' at ' + t + ' in ' + homecity + ".";
+          return ans;
+        }
+        else if (location !== home && p !== home && p !== homecity) {
+          ans = 'The next ' + gender + ' ' + sport + ' away game is ' + d.toDateString() + ' at ' + t + ' in ' + p + ".";
+          return ans;
+        }
+      }
+    }
+    return ans;
+  }
+  
+  function getRemaining(now, location) {
+    console.log('Entering getRemaining: ' + now + ' ' + games.length + ' ' + location);
+    const ls = (location === null) ? "" : location;
+    let ctRemaining = 0;
+    let ctHomes = 0;
+    let ctAways = 0;
+    let ans = 'There are ' + ctAways + ' ' + gender + ' ' + sport + ' ' + ls + ' games remaining.';
+    for (let j = 0; j < games.length; j++) {
+      const item = games[j];
+      const p = item.gamelocation;
+      const i = item.gamedate;
+      const d = new Date(i.year, i.month - 1, i.day, i.hour, i.minute, 0);
+      if (d > now && (p === home || p === homecity)) {
+        ctRemaining += 1;
+        ctHomes += 1;
+        console.log('ctRemaining=' + ctRemaining + ' ctHomes=' + ctHomes);
+      }
+      else if (d > now && p !== home && p !== homecity) {
+        ctRemaining += 1;
+        ctAways += 1;
+        console.log('ctRemaining=' + ctRemaining + ' ctAways=' + ctAways);
+      }
+    }
+    if (ctRemaining === 0) { ans = 'There are no ' + gender + ' ' + sport + ' games remaining.'; }
+    else if (location === null) { ans = 'There are ' + ctRemaining + ' ' + gender + ' ' + sport + ' games remaining.'; }
+    else if (location === home) { ans = 'There are ' + ctHomes + ' ' + gender + ' ' + sport + ' ' + ls + ' games remaining.'; }
+    else if (location === away) { ans = 'There are ' + ctAways + ' ' + gender + ' ' + sport + ' ' + ls + ' games remaining.'; }
+    return ans;
+  }
+  
+  const LaunchRequestHandler = {
+    canHandle(handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
+    },
+    handle(handlerInput) {
+      const speechText = 'Welcome from ' + skillName + ', say when is the next home game? or How many games remaining?';
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt(speechText)
+        .getResponse();
+    }
+  };
+  
+  // ********************************* NEXT ************************************
+  const NextIntentHandler = {
+    canHandle(handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
+        handlerInput.requestEnvelope.request.intent.name === 'NextIntent';
+    },
+    handle(handlerInput) {
+      const s = handlerInput.requestEnvelope.request.intent.slots;
+      const location = (s.Location) ? s.Location.value : null;
+      console.log('next location = ' + location);
+      const now = new Date();
+      console.log('next now = ' + now.toDateString());
+      let speechText = '';
+      speechText = speechText + ' ' + getNext(now, location);
+      if (speechText === '') { speechText = "Hmm...I can't help with that one. Try asking when is the next game or how many games remaining?" }
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt('Ask how many games remaining or say stop or cancel to exit.')
+        .getResponse();
+    }
+  };
+  
+  // ********************************* REMAINING ****************************
+  const RemainingIntentHandler = {
+    canHandle(handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
+        handlerInput.requestEnvelope.request.intent.name === 'RemainingIntent';
+    },
+    handle(handlerInput) {
+      const s = handlerInput.requestEnvelope.request.intent.slots;
+      const location = (s.Location.value) ? s.Location.value : null;
+      console.log('remaining location = ' + location);
+      const now = new Date();
+      console.log('remaining now = ' + now.toDateString());
+      let speechText = '';
+      speechText = speechText + ' ' + getRemaining(now, location);
+      if (speechText === '') { speechText = "Hmm...I can't help with that one. Say when is the next game or how many games remaining?" }
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt('Ask when is the next game or say stop or cancel to exit.')
+        .getResponse();
+    }
+  };
+  const HelpIntentHandler = {
+    canHandle(handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
+        handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
+    },
+    handle(handlerInput) {
+      const speechText = helpText;
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt(`Sorry, I missed that.  ${speechText}`)
+        .getResponse();
+    }
+  };
+  const CancelAndStopIntentHandler = {
+    canHandle(handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
+        (handlerInput.requestEnvelope.request.intent.name === 'AMAZON.CancelIntent' ||
+          handlerInput.requestEnvelope.request.intent.name === 'AMAZON.StopIntent');
+    },
+    handle(handlerInput) {
+      const speechText = 'Go Bearcats - Goodbye!';
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .getResponse();
+    }
+  };
+  const SessionEndedRequestHandler = {
+    canHandle(handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'SessionEndedRequest';
+    },
+    handle(handlerInput) {
+      // Any cleanup logic goes here.
+      return handlerInput.responseBuilder.getResponse();
+    }
+  };
+  
+  // The intent reflector is used for interaction model testing and debugging.
+  // It will simply repeat the intent the user said. You can create custom handlers
+  // for your intents by defining them above, then also adding them to the request
+  // handler chain below.
+  const IntentReflectorHandler = {
+    canHandle(handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'IntentRequest';
+    },
+    handle(handlerInput) {
+      //const intentName = handlerInput.requestEnvelope.request.intent.name;
+      const speechText = `The ${skillName} skill can't help with that. ${helpText}`;
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt(``)
+        .getResponse();
+    }
+  };
+  
+  // Generic error handling to capture any syntax or routing errors. If you receive an error
+  // stating the request handler chain is not found, you have not implemented a handler for
+  // the intent being invoked or included it in the skill builder below.
+  const ErrorHandler = {
+    canHandle() {
+      return true;
+    },
+    handle(handlerInput, error) {
+      console.log(`~~~~ Error handled: ${error.message}`);
+      const speechText = `Sorry, I couldn't understand. Please try again.`;
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt(speechText)
+        .getResponse();
+    }
+  };
+  
+  // This handler acts as the entry point for your skill, routing all request and response
+  // payloads to the handlers above. Make sure any new handlers or interceptors you've
+  // defined are included below. The order matters - they're processed top to bottom.
+  exports.handler = Alexa.SkillBuilders.custom()
+    .addRequestHandlers(
+      LaunchRequestHandler,
+      NextIntentHandler,
+      RemainingIntentHandler,
+      HelpIntentHandler,
+      CancelAndStopIntentHandler,
+      SessionEndedRequestHandler,
+      IntentReflectorHandler)
+    // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
+    .addErrorHandlers(
+      ErrorHandler)
+    .lambda();
+  
+
+
+
+
 
 // Session Attributes 
 //   Alexa will track attributes for you, by default only during the lifespan of your session.
@@ -223,6 +430,9 @@ const date_Handler =  {
         let sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
 
         let say = 'Hello from date. ';
+        this.handle(handlerOutput){
+            const 
+        }
 
 
         return responseBuilder

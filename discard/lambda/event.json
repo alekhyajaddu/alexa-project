@@ -1,0 +1,111 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "events application",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": [
+                        "redirecting to home page",
+                        "error"
+                    ]
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "take me out of this program ",
+                        "leave the application",
+                        "stop this program ",
+                        "exit application "
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "alexa I'm stuck",
+                        "How do I run this application",
+                        "Hey I don't get this",
+                        "Help me.",
+                        "I need help with this."
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "remove this question ",
+                        "stop I don't want to know",
+                        "wait remove what I said",
+                        "pause and delete the previous question"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": [
+                        "I want to begin again",
+                        "restart the application",
+                        "Alexa take me back to the home page"
+                    ]
+                },
+                {
+                    "name": "Fee",
+                    "slots": [],
+                    "samples": [
+                        "what is the price of the whole event",
+                        "how much does it cost",
+                        "what is the fee for a non-member",
+                        "what is the price for a member ",
+                        "How much does it cost for an adult",
+                        "What is the entry fee"
+                    ]
+                },
+                {
+                    "name": "time",
+                    "slots": [],
+                    "samples": [
+                        "can you tell me when is the event taking place",
+                        "when is it happening",
+                        "at what time does it begin",
+                        "at what time is it begining",
+                        "When is the event going to take place"
+                    ]
+                },
+                {
+                    "name": "venue",
+                    "slots": [],
+                    "samples": [
+                        "what is the venue of the event",
+                        "tell me the venue ",
+                        "what is the location of the event",
+                        "where is it hosted ",
+                        "can you tell me the location",
+                        "where is the event happening"
+                    ]
+                },
+                {
+                    "name": "date",
+                    "slots": [],
+                    "samples": [
+                        "alexa tell me the date of this event",
+                        "can you confirm the date of this event",
+                        "on which date is this event falling on",
+                        "on which day is it happening ",
+                        "when is the event occurring"
+                    ]
+                },
+                {
+                    "name": "description",
+                    "slots": [],
+                    "samples": [
+                        "explain further about this",
+                        "I need more information ",
+                        "tell me more about this event",
+                        "what is happening in this event",
+                        "elaborate further on this event",
+                        "can you tell me the description of this event"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
