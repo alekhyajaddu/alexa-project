@@ -82,37 +82,37 @@ let date = {
     "KXCV-KRNW":{
         "year":"2020",
         "month":"april",
-        "date":"17"
+        "day":"17"
     },
     "stressbuster":{
         "year":"2020",
         "month":"april",
-        "date":"20"
+        "day":"20"
     },
     "coffee&career":{
         "year":"2020",
         "month":"april",
-        "date":"24"
+        "day":"24"
     },
     "NWOrchestra":{
         "year":"2020",
         "month":"april",
-        "date":"23"
+        "day":"23"
     },
     "Dodgeball Tournament":{
         "year":"2020",
         "month":"april",
-        "date":"21"
+        "day":"21"
     },
     "Meditation":{
         "year":"2020",
         "month":"april",
-        "date":"22"
+        "day":"22"
     },
     "International Coffee Hour":{
         "year":"2020",
         "month":"",
-        "date":""
+        "day":"22"
     }
 }
 
