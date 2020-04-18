@@ -1,0 +1,129 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "event application",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": [
+                        "error",
+                        "redirecting to home page"
+                    ]
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "stop this application",
+                        "leave this program or application",
+                        "i want to exit"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "Alexa i'm stuck",
+                        "i don't understand ",
+                        "I am stuck ",
+                        "i need some help please"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "wait remove what I said",
+                        "pause and delete the previous question ",
+                        "stop i don't want to know",
+                        "remove this question"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": [
+                        "home",
+                        "Alexa take me back to the homepage ",
+                        "restart the application",
+                        "I want to begin again"
+                    ]
+                },
+                {
+                    "name": "time",
+                    "slots": [
+                        {
+                            "name": "time",
+                            "type": "LIST_OF_EVENTS"
+                        }
+                    ],
+                    "samples": [
+                        "when does this event take place",
+                        "at what {time} does it begin",
+                        "when is it happening ",
+                        "can you tell me when is the event taking place"
+                    ]
+                },
+                {
+                    "name": "venue",
+                    "slots": [
+                        {
+                            "name": "venue",
+                            "type": "LIST_OF_EVENTS"
+                        }
+                    ],
+                    "samples": [
+                        "tell me the place where it is happening",
+                        "where is it being hosted ",
+                        "tell me the location of the event",
+                        "what time is the {venue} of the event"
+                    ]
+                },
+                {
+                    "name": "date",
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "LIST_OF_EVENTS"
+                        }
+                    ],
+                    "samples": [
+                        "on which day is it happening",
+                        "when is this event occuring",
+                        "can you confirm the {date} of this program",
+                        "alexa tell me the date of this event"
+                    ]
+                },
+                {
+                    "name": "description",
+                    "slots": [
+                        {
+                            "name": "description",
+                            "type": "LIST_OF_EVENTS"
+                        }
+                    ],
+                    "samples": [
+                        "what is happening in this event",
+                        "elaborate further on this topic",
+                        "I need more informtion",
+                        "explain further about this"
+                    ]
+                },
+                {
+                    "name": "Welcome",
+                    "slots": [
+                        {
+                            "name": "Welcome",
+                            "type": "LIST_OF_EVENTS"
+                        }
+                    ],
+                    "samples": [
+                        "{Welcome} to your custom app event"
+                    ]
+                }
+            ],
+            "types": ["LIST_OF_EVENTS"]  
+        }
+    }
+}
