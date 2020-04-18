@@ -180,14 +180,24 @@ function onIntent(intentRequest, session, callback) {
 
     // dispatch custom intents to handlers here
     if(intentName == "time"){
-
+        handleTimeResponse(intent, session, callback)
     } else if(intentName == "venue"){
-
+        handleVenueResponse(intent, session, callback)
     } else if(intentName == "description"){
-
+        handleDescriptionResponse(intent, session, callback)
     } else if(intentName == "date"){
+        handleDateResponse(intent, session, callback)
+    } else if(intentName == "AMAZON.FallbackIntent"){
+        
+    }else if(intentName == "AMAZON.CancelIntent"){
 
-    } else if(intentName == "AMAZON.")
+    }else if(intentName == "AMAZON.StopIntent"){
+
+    }else if(intentName == "AMAZON.NavigateHomeIntent"){
+
+    }else{
+        throw "Invalid intent"
+    }
     //if (intentName == "GetInfoIntent") {
    //     handleGetInfoIntent(intent, session, callback)
    // } else {
@@ -222,6 +232,10 @@ function getWelcomeResponse(callback) {
 
     callback(sessionAttributes, buildSpeechletResponse(header, speechOutput, reprompt, shouldEndSession))
 
+}
+
+function handleTimeResponse(intent,session,callback){
+    var time=intent.slots.hour.value.toLowerCase()
 }
 
 function handleGetInfoIntent(intent, session, callback) {
