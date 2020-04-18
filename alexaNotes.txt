@@ -1,3 +1,0 @@
-alexa core gen
-alexa console
-lambda console - create project
