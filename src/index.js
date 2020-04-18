@@ -6,24 +6,23 @@ let time = {
     "stressbuster":{
         "time_zone": "CST",
         "hour": "16:00"
-    }
+    },
     "coffee&career":{
         "time_zone": "CST",
         "hour": "08:30"
-    }
+    },
     "NWOrchestre":{
         "time_zone": "CST",
         "hour": "19:30"
-    }
+    },
     "Dodgeball Tournament":{
         "time_zone": "CST",
         "hour": "17:00"
-    }
+    },
     "Meditation":{
         "time_zone": "CST",
         "hour": "12:00"
-    }
-    
+    },
     "International Coffee Hour":{
         "time_zone": "CST",
         "hour": "14:30"
@@ -36,20 +35,19 @@ let venue = {
     },
     "stressbuster":{
         "Location": "The Station, Maryville, MO."
-    }
+    },
     "coffee&career":{
         "Location": "Career Services, Administration Building, NWMSU, MO."
-    }
+    },
     "NWOrchestre":{
         "Location": "Ron Houston Center for Performing Arts, Maryville, MO."
-    }
+    },
     "Dodgeball Tournament":{
         "Location": "Student Rec Center, NWMSU, MO."
-    }
+    },
     "Meditation":{
         "Location": "JW Jones Student Union, NWMSU, MO."
-    }
-    
+    },
     "International Coffee Hour":{
         "Location": "BD Owens Library, NWMSU, MO."
     }
@@ -63,24 +61,23 @@ let description = {
     "stressbuster":{
         "time_zone": "CST",
         "hour": "16:00"
-    }
+    },
     "coffee&career":{
         "time_zone": "CST",
         "hour": "08:30"
-    }
+    },
     "NWOrchestre":{
         "time_zone": "CST",
         "hour": "19:30"
-    }
+    },
     "Dodgeball Tournament":{
         "time_zone": "CST",
         "hour": "17:00"
-    }
+    },
     "Meditation":{
         "time_zone": "CST",
         "hour": "12:00"
-    }
-    
+    },
     "International Coffee Hour":{
         "time_zone": "CST",
         "hour": "14:30"
@@ -95,24 +92,23 @@ let date = {
     "stressbuster":{
         "time_zone": "CST",
         "hour": "16:00"
-    }
+    },
     "coffee&career":{
         "time_zone": "CST",
         "hour": "08:30"
-    }
+    },
     "NWOrchestre":{
         "time_zone": "CST",
         "hour": "19:30"
-    }
+    },
     "Dodgeball Tournament":{
         "time_zone": "CST",
         "hour": "17:00"
-    }
+    },
     "Meditation":{
         "time_zone": "CST",
         "hour": "12:00"
-    }
-    
+    },
     "International Coffee Hour":{
         "time_zone": "CST",
         "hour": "14:30"
