@@ -1,5 +1,5 @@
 # alexa-project
-Developers: Conversational AI - Alexa or Google Home project ( server-side JavaScript)
+Developers: Conversational AI - Alexa project ( server-side JavaScript)
 
 # ALEXA - PROJECT
 
