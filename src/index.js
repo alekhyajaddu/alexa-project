@@ -179,11 +179,20 @@ function onIntent(intentRequest, session, callback) {
     var intentName = intentRequest.intent.name;
 
     // dispatch custom intents to handlers here
-    if (intentName == "GetInfoIntent") {
-        handleGetInfoIntent(intent, session, callback)
-    } else {
-         throw "Invalid intent"
-    }
+    if(intentName == "time"){
+
+    } else if(intentName == "venue"){
+
+    } else if(intentName == "description"){
+
+    } else if(intentName == "date"){
+
+    } else if(intentName == "AMAZON.")
+    //if (intentName == "GetInfoIntent") {
+   //     handleGetInfoIntent(intent, session, callback)
+   // } else {
+    //     throw "Invalid intent"
+    //}
 }
 
 /**
