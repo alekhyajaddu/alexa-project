@@ -235,11 +235,59 @@ function getWelcomeResponse(callback) {
 }
 
 function handleTimeResponse(intent,session,callback){
-    var time=intent.slots.hour.value.toLowerCase()
+    let timeinput =intent.slots.hour.value.toLowerCase()
+
+    if(!timeinput[time]){
+        let speechOutput = "Event not listed."
+        let reprompt = "Better luck next time!"
+        let header = "Invalid text."
+    } else{
+        let time_zone=timeinput[time].time_zone
+        let hour=timeinput[time].hour
+        let speechOutput = time + " " + time_zone + " at " + hour
+    }
+}
+
+function handleVenueResponse(intent, session, callback){
+    let venueinput = intent.slots.venue.value.toLowerCase()
+    if(!venueinput[venue]){
+        let speechOutput = "No events available at this venue."
+        let reprompt = "Better luck next time!"
+        let header = "Invalid text."
+    } else{
+        let location=venueinput[venue].location
+        let speechOutput = capitalizeFirst(venue) + " is at " + location 
+    }
+}
+
+function handleDescriptionResponse(intent, session, callback){
+    let descinput = intent.slots.description.value.toLowerCase()
+    if(!descinput[description]){
+        let speechOutput = "There is no description for events which are not listed."
+        let reprompt = "Better luck next time!"
+        let header = "Invalid text."
+    } else{
+        let desc=descinput[description].desc
+        let speechOutput = captitalizeFirst(desc)
+    }
+}
+
+function handleDateResponse(intent, session, callback){
+    let dateinput = intent.slot.date.value.toLowerCase()
+    if(!dateinput[date]){
+        let speechOutput = "Hey! You have no events today!"
+        let reprompt = "Better luck next time!"
+        let header = "Invalid text."
+    } else{
+        let year=dateinput[date].year
+        let month=dateinput[date].month
+        let day=dateinput[date].day
+        let speechOutput = year + " " + month + day
+    }
 }
 
 function handleGetInfoIntent(intent, session, callback) {
-
+    let 
 
 }
 
