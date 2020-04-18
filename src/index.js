@@ -244,7 +244,12 @@ function handleTimeResponse(intent,session,callback){
     } else{
         let time_zone=timeinput[time].time_zone
         let hour=timeinput[time].hour
-        let speechOutput = time + " " + time_zone + " at " + hour
+        let speechOutput = time + " " + time_zone + " at " + hour 
+        + " Do you want to check the timings of other events listed: "
+        + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
+        let repromptText="Do you want more information of other event timings?"
+      //  let header = capitalizeFirst(time)
+
     }
 }
 
@@ -257,6 +262,10 @@ function handleVenueResponse(intent, session, callback){
     } else{
         let location=venueinput[venue].location
         let speechOutput = capitalizeFirst(venue) + " is at " + location 
+        + " Do you want to check the venue of other events listed: "
+        + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
+        let repromptText="Do you want more information of other event venues?"
+        let header = capitalizeFirst(venue)
     }
 }
 
@@ -269,6 +278,10 @@ function handleDescriptionResponse(intent, session, callback){
     } else{
         let desc=descinput[description].desc
         let speechOutput = captitalizeFirst(desc)
+        + " Do you want to check the description of other events listed: "
+        + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
+        let repromptText="Do you want more information of other event details?"
+        let header = capitalizeFirst(desc)
     }
 }
 
@@ -283,11 +296,14 @@ function handleDateResponse(intent, session, callback){
         let month=dateinput[date].month
         let day=dateinput[date].day
         let speechOutput = year + " " + month + day
+        + " Do you want to check the date of other events listed: "
+        + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
+        let repromptText="Do you want more information of events on other days?"
+       // let header = capitalizeFirst(time)
     }
 }
 
 function handleGetInfoIntent(intent, session, callback) {
-    let 
 
 }
 
