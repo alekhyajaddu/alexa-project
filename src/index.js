@@ -141,7 +141,7 @@ exports.handler = function (event, context) {
                 function callback(sessionAttributes, speechletResponse) {
                     context.succeed(buildResponse(sessionAttributes, speechletResponse));
                 });
-        } else if (event.request.type === "IntentRequest") {
+        } else if (event.request.type === "intent") {
             onIntent(event.request,
                 event.session,
                 function callback(sessionAttributes, speechletResponse) {
@@ -174,10 +174,10 @@ function onLaunch(launchRequest, session, callback) {
 /**
  * Called when the user specifies an intent for this skill.
  */
-function onIntent(intentRequest, session, callback) {
+function onIntent(intent, session, callback) {
 
-    var intent = intentRequest.intent
-    var intentName = intentRequest.intent.name;
+    var intent = intent.intent
+    var intentName = intent.intent.name;
 
     // dispatch custom intents to handlers here
     if(intentName == "time"){
