@@ -52,57 +52,37 @@
                 },
                 {
                     "name": "time",
-                    "slots": [
-                        {
-                            "name": "time",
-                            "type": "LIST_OF_EVENTS"
-                        }
-                    ],
+                    "slots": [],
                     "samples": [
                         "when does this event take place",
-                        "at what {time} does it begin",
+                        "at what time does it begin",
                         "when is it happening ",
                         "can you tell me when is the event taking place"
                     ]
                 },
                 {
                     "name": "venue",
-                    "slots": [
-                        {
-                            "name": "venue",
-                            "type": "LIST_OF_EVENTS"
-                        }
-                    ],
+                    "slots": [],
                     "samples": [
                         "tell me the place where it is happening",
                         "where is it being hosted ",
                         "tell me the location of the event",
-                        "what time is the {venue} of the event"
+                        "what time is the venue of the event"
                     ]
                 },
                 {
                     "name": "date",
-                    "slots": [
-                        {
-                            "name": "date",
-                            "type": "LIST_OF_EVENTS"
-                        }
-                    ],
+                    "slots": [],
                     "samples": [
                         "on which day is it happening",
                         "when is this event occuring",
-                        "can you confirm the {date} of this program",
+                        "can you confirm the date of this program",
                         "alexa tell me the date of this event"
                     ]
                 },
                 {
                     "name": "description",
-                    "slots": [
-                        {
-                            "name": "description",
-                            "type": "LIST_OF_EVENTS"
-                        }
-                    ],
+                    "slots": [],
                     "samples": [
                         "what is happening in this event",
                         "elaborate further on this topic",
@@ -112,18 +92,13 @@
                 },
                 {
                     "name": "Welcome",
-                    "slots": [
-                        {
-                            "name": "Welcome",
-                            "type": "LIST_OF_EVENTS"
-                        }
-                    ],
+                    "slots": [],
                     "samples": [
-                        "{Welcome} to your custom app event"
+                        "Welcome to your custom app"
                     ]
                 }
             ],
-            "types": ["LIST_OF_EVENTS"]  
+            "types": []
         }
     }
 }
