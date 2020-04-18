@@ -311,7 +311,7 @@ function handleDateResponse(intent, session, callback){
 }
 
 function handleFallbackResponse(intent,session,callback){
-    let speechOutput=""
+    let speechOutput="Hi! Are you trying to fall back? Well you are being redirected to the time intent."
     let repromptText=speechOutput
     let shouldEndSession = false
 
@@ -320,25 +320,25 @@ function handleFallbackResponse(intent,session,callback){
 }
 
 function handleCancelResponse(intent,session,callback){
-    let speechOutput=""
+    let speechOutput="Welcome to the Cancel module, the application will end now. Have a nice day!"
     let repromptText=speechOutput
-    let shouldEndSession = false
+    let shouldEndSession = true
 
     callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
 
 }
 
 function handleStopResponse(intent,session,callback){
-    let speechOutput=""
+    let speechOutput="Hey sad to see you go, hope you had a good time with this app!"
     let repromptText=speechOutput
-    let shouldEndSession = false
+    let shouldEndSession = true
 
     callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
 
 }
 
 function handleNavigateHomeResponse(intent,session,callback){
-    let speechOutput=""
+    let speechOutput="You wanna go home? You will be redirected to the description intent."
     let repromptText=speechOutput
     let shouldEndSession = false
 
