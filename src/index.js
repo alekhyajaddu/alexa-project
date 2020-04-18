@@ -188,13 +188,13 @@ function onIntent(intentRequest, session, callback) {
     } else if(intentName == "date"){
         handleDateResponse(intent, session, callback)
     } else if(intentName == "AMAZON.FallbackIntent"){
-        
+        handleFallbackResponse(intent,session,callback)
     }else if(intentName == "AMAZON.CancelIntent"){
-
+        handleCancelResponse(intent,session,callback)
     }else if(intentName == "AMAZON.StopIntent"){
-
+        handleStopResponse(intent,session,callback)
     }else if(intentName == "AMAZON.NavigateHomeIntent"){
-
+        handleNavigateHomeResponse(intent,session,callback)
     }else{
         throw "Invalid intent"
     }
@@ -249,8 +249,9 @@ function handleTimeResponse(intent,session,callback){
         + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
         let repromptText="Do you want more information of other event timings?"
       //  let header = capitalizeFirst(time)
-
     }
+    let shouldEndSession=false 
+    callback(session.attributes, buildSpeechletResponse(header, speechOutput, repromptText, shouldEndSession))
 }
 
 function handleVenueResponse(intent, session, callback){
@@ -267,6 +268,8 @@ function handleVenueResponse(intent, session, callback){
         let repromptText="Do you want more information of other event venues?"
         let header = capitalizeFirst(venue)
     }
+    let shouldEndSession=false 
+    callback(session.attributes, buildSpeechletResponse(header, speechOutput, repromptText, shouldEndSession))
 }
 
 function handleDescriptionResponse(intent, session, callback){
@@ -283,6 +286,8 @@ function handleDescriptionResponse(intent, session, callback){
         let repromptText="Do you want more information of other event details?"
         let header = capitalizeFirst(desc)
     }
+    let shouldEndSession=false 
+    callback(session.attributes, buildSpeechletResponse(header, speechOutput, repromptText, shouldEndSession))
 }
 
 function handleDateResponse(intent, session, callback){
@@ -301,6 +306,24 @@ function handleDateResponse(intent, session, callback){
         let repromptText="Do you want more information of events on other days?"
        // let header = capitalizeFirst(time)
     }
+    let shouldEndSession=false 
+    callback(session.attributes, buildSpeechletResponse(header, speechOutput, repromptText, shouldEndSession))
+}
+
+function handleFallbackResponse(intent,session,callback){
+
+}
+
+function handleCancelResponse(intent,session,callback){
+
+}
+
+function handleStopResponse(intent,session,callback){
+
+}
+
+function handleNavigateHomeResponse(intent,session,callback){
+    
 }
 
 function handleGetInfoIntent(intent, session, callback) {
