@@ -23,7 +23,6 @@ let time = {
         "time_zone": "CST",
         "hour": "12:00"
     }
-    
     "International Coffee Hour":{
         "time_zone": "CST",
         "hour": "14:30"
