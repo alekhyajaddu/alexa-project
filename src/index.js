@@ -6,23 +6,32 @@ let time = {
     "stressbuster":{
         "time_zone": "CST",
         "hour": "16:00"
-    }
+    },
     "coffee&career":{
         "time_zone": "CST",
         "hour": "08:30"
+<<<<<<< HEAD
     }
     "NWOrchestra":{
+=======
+    },
+    "NWOrchestre":{
+>>>>>>> e42550ebd98d05c5f98c7ae03d1415a094391e05
         "time_zone": "CST",
         "hour": "19:30"
-    }
+    },
     "Dodgeball Tournament":{
         "time_zone": "CST",
         "hour": "17:00"
-    }
+    },
     "Meditation":{
         "time_zone": "CST",
         "hour": "12:00"
+<<<<<<< HEAD
     }
+=======
+    },
+>>>>>>> e42550ebd98d05c5f98c7ae03d1415a094391e05
     "International Coffee Hour":{
         "time_zone": "CST",
         "hour": "14:30"
@@ -35,20 +44,24 @@ let venue = {
     },
     "stressbuster":{
         "Location": "The Station, Maryville, MO."
-    }
+    },
     "coffee&career":{
         "Location": "Career Services, Administration Building, NWMSU, MO."
+<<<<<<< HEAD
     }
     "NWOrchestra":{
+=======
+    },
+    "NWOrchestre":{
+>>>>>>> e42550ebd98d05c5f98c7ae03d1415a094391e05
         "Location": "Ron Houston Center for Performing Arts, Maryville, MO."
-    }
+    },
     "Dodgeball Tournament":{
         "Location": "Student Rec Center, NWMSU, MO."
-    }
+    },
     "Meditation":{
         "Location": "JW Jones Student Union, NWMSU, MO."
-    }
-    
+    },
     "International Coffee Hour":{
         "Location": "BD Owens Library, NWMSU, MO."
     }
@@ -59,6 +72,7 @@ let description = {
         "desc":"Individuals are invited to participate – anytime, anywhere – by clocking their times and then sending a selfie and photo of their results to helenk@nwmissouri.edu or by posting to the KXCV-KRNW Facebook page."
     },
     "stressbuster":{
+<<<<<<< HEAD
         "desc":"Learn to recognize and effectively manage stress in fun, healthy ways! All students, faculty and staff are welcome."
     }
     "coffee&career":{
@@ -74,6 +88,27 @@ let description = {
         "desc":"These sessions introduce individuals to the ancient practices of mindfulness and meditation and allow participants to engage in the practice of meditation on a regular basis. Participants are encouraged to bring a pillow or thick towel to sit on."
     }
     
+=======
+        "time_zone": "CST",
+        "hour": "16:00"
+    },
+    "coffee&career":{
+        "time_zone": "CST",
+        "hour": "08:30"
+    },
+    "NWOrchestre":{
+        "time_zone": "CST",
+        "hour": "19:30"
+    },
+    "Dodgeball Tournament":{
+        "time_zone": "CST",
+        "hour": "17:00"
+    },
+    "Meditation":{
+        "time_zone": "CST",
+        "hour": "12:00"
+    },
+>>>>>>> e42550ebd98d05c5f98c7ae03d1415a094391e05
     "International Coffee Hour":{
         "desc":"The activity provides an opportunity for students, staff and faculty to connect. Make new friends from around the globe, connect with old friends and have fun."
     }
@@ -86,6 +121,7 @@ let date = {
         "date":"17"
     },
     "stressbuster":{
+<<<<<<< HEAD
         "year":"2020",
         "month":"april",
         "date":"20"
@@ -111,6 +147,27 @@ let date = {
         "date":"22"
     }
     
+=======
+        "time_zone": "CST",
+        "hour": "16:00"
+    },
+    "coffee&career":{
+        "time_zone": "CST",
+        "hour": "08:30"
+    },
+    "NWOrchestre":{
+        "time_zone": "CST",
+        "hour": "19:30"
+    },
+    "Dodgeball Tournament":{
+        "time_zone": "CST",
+        "hour": "17:00"
+    },
+    "Meditation":{
+        "time_zone": "CST",
+        "hour": "12:00"
+    },
+>>>>>>> e42550ebd98d05c5f98c7ae03d1415a094391e05
     "International Coffee Hour":{
         "year":"2020",
         "month":"",
@@ -199,9 +256,10 @@ function onSessionEnded(sessionEndedRequest, session) {
 // ------- Skill specific logic -------
 
 function getWelcomeResponse(callback) {
-    var speechOutput = "Welcome! Do you want to hear about some facts?"
+    var speechOutput = "Welcome! Do you want to get some information about the followinf events:"
+    + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
 
-    var reprompt = "Do you want to hear about some facts?"
+    var reprompt = "Do you want to hear about some information on the events, KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour.?"
 
     var header = "Get Info"
 
