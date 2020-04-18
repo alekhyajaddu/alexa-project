@@ -210,9 +210,9 @@ function onIntent(intent, session, callback) {
  * Called when the user ends the session.
  * Is not called when the skill returns shouldEndSession=true.
  */
-function onSessionEnded(sessionEndedRequest, session) {
+//function onSessionEnded(sessionEndedRequest, session) {
 
-}
+//}
 
 // ------- Skill specific logic -------
 
