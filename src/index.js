@@ -311,19 +311,39 @@ function handleDateResponse(intent, session, callback){
 }
 
 function handleFallbackResponse(intent,session,callback){
+    let speechOutput=""
+    let repromptText=speechOutput
+    let shouldEndSession = false
+
+    callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
 
 }
 
 function handleCancelResponse(intent,session,callback){
+    let speechOutput=""
+    let repromptText=speechOutput
+    let shouldEndSession = false
+
+    callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
 
 }
 
 function handleStopResponse(intent,session,callback){
+    let speechOutput=""
+    let repromptText=speechOutput
+    let shouldEndSession = false
+
+    callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
 
 }
 
 function handleNavigateHomeResponse(intent,session,callback){
-    
+    let speechOutput=""
+    let repromptText=speechOutput
+    let shouldEndSession = false
+
+    callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
+
 }
 
 function handleGetInfoIntent(intent, session, callback) {
