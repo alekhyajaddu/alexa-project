@@ -200,9 +200,10 @@ function onSessionEnded(sessionEndedRequest, session) {
 // ------- Skill specific logic -------
 
 function getWelcomeResponse(callback) {
-    var speechOutput = "Welcome! Do you want to hear about some facts?"
+    var speechOutput = "Welcome! Do you want to get some information about the followinf events:"
+    + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
 
-    var reprompt = "Do you want to hear about some facts?"
+    var reprompt = "Do you want to hear about some information on the events, KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour.?"
 
     var header = "Get Info"
 
