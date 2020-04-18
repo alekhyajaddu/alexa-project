@@ -334,7 +334,7 @@ const ErrorHandler =  {
     //    const myArray  = [ "orange", "grape", "strawberry" ];
     //    const myObject = { "city": "Boston",  "state":"Massachusetts" };
 
-const APP_ID = undefined;  // TODO replace with your Skill ID (OPTIONAL).
+const APP_ID = 'amzn1.ask.skill.59df96fe-c7a4-4e07-886b-17971a744186';  // TODO replace with your Skill ID (OPTIONAL).
 
 // 3.  Helper Functions ===================================================================
 
