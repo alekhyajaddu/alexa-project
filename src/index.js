@@ -161,6 +161,7 @@ exports.handler = function (event, context) {
  */
 function onSessionStarted(sessionStartedRequest, session) {
     // add any session init logic here
+    onIntent(intentRequest, session, callback);
 }
 
 /**
