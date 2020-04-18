@@ -318,24 +318,6 @@ function handleFallbackResponse(intent,session,callback){
     callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
 
 }
-/*
-function handleCancelResponse(intent,session,callback){
-    let speechOutput="Welcome to the Cancel module, the application will end now. Have a nice day!"
-    let repromptText=speechOutput
-    let shouldEndSession = true
-
-    buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession);
-
-}
-
-function handleStopResponse(intent,session,callback){
-    let speechOutput="Hey sad to see you go, hope you had a good time with this app!"
-    let repromptText=speechOutput
-    let shouldEndSession = true
-
-    buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession);
-
-}*/
 
 function handleNavigateHomeResponse(intent,session,callback){
     if (!session.attributes){
@@ -351,9 +333,9 @@ function handleNavigateHomeResponse(intent,session,callback){
 }
 
 function handleFinishSessionRequest(intent, session, callback) {
-    // End the session with a "Good bye!" if the user wants to quit the game
+    // End the session with a "Hey sad to see you go, hope you had a good time with this app!" if the user wants to quit the game
     callback(session.attributes,
-        buildSpeechletResponseWithoutCard("Good bye!", "", true));
+        buildSpeechletResponseWithoutCard("Hey sad to see you go, hope you had a good time with this app!", "", true));
 }
 
 function handleGetInfoIntent(intent, session, callback) {
