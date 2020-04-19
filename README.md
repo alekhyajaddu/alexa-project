@@ -17,7 +17,7 @@ Developers: Conversational AI - Alexa project ( server-side JavaScript)
 1. [Annie Chandolu](https://github.com/Annie0sc)
 2. [Alekhya Jaddu](https://github.com/Alekhyajaddu)
 3. [Gundu Pooja](https://github.com/GunduPooja)
-4. [Sushma Chanati])(https://github.com/Sushmachanati)
+4. [Sushma Chanati](https://github.com/Sushmachanati)
 
 ### RESOURCES
 
