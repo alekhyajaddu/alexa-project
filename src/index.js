@@ -67,7 +67,7 @@ let description = {
         "desc": "The Northwest Orchestra and the Symphonic Band perform at 7:30 p.m. in the Mary Linn Auditorium at the Ron Houston Center for the Performing Arts. The concert is free and open to the public."
     },
     "Dodgeball Tournament": {
-        "desc": "Campus Recreation is having a Dodgeball Tournament on April 21st in the SRC. Make sure and bring Bearcat cards to all games to check in. "
+        "desc":"Campus Recreation is having a Dodgeball Tournament on April 21st in the SRC. Make sure and bring Bearcat cards to all games to check in. " 
     },
     "Meditation": {
         "desc": "These sessions introduce individuals to the ancient practices of mindfulness and meditation and allow participants to engage in the practice of meditation on a regular basis. Participants are encouraged to bring a pillow or thick towel to sit on."
@@ -141,7 +141,7 @@ exports.handler = function (event, context) {
                 function callback(sessionAttributes, speechletResponse) {
                     context.succeed(buildResponse(sessionAttributes, speechletResponse));
                 });
-        } else if (event.request.type === "intentRequest") {
+        } else if (event.request.type === "IntentRequest") {
             onIntent(event.request,
                 event.session,
                 function callback(sessionAttributes, speechletResponse) {
@@ -161,7 +161,7 @@ exports.handler = function (event, context) {
  */
 function onSessionStarted(sessionStartedRequest, session) {
     // add any session init logic here
-    //onIntent(intentRequest, session, callback);
+    //onIntent(IntentRequest, session, callback);
 }
 
 /**
@@ -174,10 +174,10 @@ function onLaunch(launchRequest, session, callback) {
 /**
  * Called when the user specifies an intent for this skill.
  */
-function onIntent(intentRequest, session, callback) {
+function onIntent(IntentRequest, session, callback) {
 
-    var intent = intentRequest.intent
-    var intentName = intentRequest.intent.name;
+    var intent = IntentRequest.intent
+    var intentName = IntentRequest.intent.name;
 
     // dispatch custom intents to handlers here
     if (intentName == "time") {
