@@ -63,15 +63,15 @@ function onIntent(IntentRequest, session, callback) {
 
     var intent = IntentRequest.intent
     var intentName = IntentRequest.intent.name;
-
+    for(let i=0; i<event.length;i++){
     // dispatch custom intents to handlers here
-    if (intentName == EventSource.time) {
+    if (intentName == event[i].time) {
         handleTimeResponse(intent, session, callback)
-    } else if (intentName == EventSource.venue) {
+    } else if (intentName == event[i].venue) {
         handleVenueResponse(intent, session, callback)
-    } else if (intentName == EventSource.description) {
+    } else if (intentName == event[i].description) {
         handleDescriptionResponse(intent, session, callback)
-    } else if (intentName == EventSource.date) {
+    } else if (intentName == event[i].date) {
         handleDateResponse(intent, session, callback)
     } else if (intentName == "AMAZON.FallbackIntent") {
         handleFallbackResponse(intent, session, callback)
@@ -83,6 +83,7 @@ function onIntent(IntentRequest, session, callback) {
         handleNavigateHomeResponse(intent, session, callback)
     } else {
         throw "Invalid intent"
+    }
     }
     //if (intentName == "GetInfoIntent") {
     //     handleGetInfoIntent(intent, session, callback)
@@ -123,18 +124,18 @@ function getWelcomeResponse(callback) {
 function handleTimeResponse(intent, session, callback) {
     let timeinput = intent.slots.hour.value.toLowerCase()
 
-    if (!timeinput[time]) {
+    if (!timeinput[event.time]) {
         let speechOutput = "Event not listed."
         let reprompt = "Better luck next time!"
         let header = "Invalid text."
     } else {
-        let time_zone = timeinput[time].time_zone
-        let hour = timeinput[time].hour
-        let speechOutput = time + " " + time_zone + " at " + hour
+        let time_zone = timeinput[event.time].time_zone
+        let hour = timeinput[event.time].hour
+        let speechOutput = event.time + " " + time_zone + " at " + hour
             + " Do you want to check the timings of other events listed: "
             + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
         let repromptText = "Do you want more information of other event timings?"
-        //  let header = capitalizeFirst(time)
+        let header = capitalizeFirst(event.time)
     }
     let shouldEndSession = false
     callback(session.attributes, buildSpeechletResponse(header, speechOutput, repromptText, shouldEndSession))
@@ -142,17 +143,17 @@ function handleTimeResponse(intent, session, callback) {
 
 function handleVenueResponse(intent, session, callback) {
     let venueinput = intent.slots.venue.value.toLowerCase()
-    if (!venueinput[venue]) {
+    if (!venueinput[event.venue]) {
         let speechOutput = "No events available at this venue."
         let reprompt = "Better luck next time!"
         let header = "Invalid text."
     } else {
-        let location = venueinput[venue].location
-        let speechOutput = capitalizeFirst(venue) + " is at " + location
+        let location = venueinput[event.venue].location
+        let speechOutput = capitalizeFirst(event.venue) + " is at " + location
             + " Do you want to check the venue of other events listed: "
             + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
         let repromptText = "Do you want more information of other event venues?"
-        let header = capitalizeFirst(venue)
+        let header = capitalizeFirst(event.venue)
     }
     let shouldEndSession = false
     callback(session.attributes, buildSpeechletResponse(header, speechOutput, repromptText, shouldEndSession))
@@ -160,12 +161,12 @@ function handleVenueResponse(intent, session, callback) {
 
 function handleDescriptionResponse(intent, session, callback) {
     let descinput = intent.slots.description.value.toLowerCase()
-    if (!descinput[description]) {
+    if (!descinput[event.description]) {
         let speechOutput = "There is no description for events which are not listed."
         let reprompt = "Better luck next time!"
         let header = "Invalid text."
     } else {
-        let desc = descinput[description].desc
+        let desc = descinput[event.description].desc
         let speechOutput = captitalizeFirst(desc)
             + " Do you want to check the description of other events listed: "
             + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
@@ -178,19 +179,19 @@ function handleDescriptionResponse(intent, session, callback) {
 
 function handleDateResponse(intent, session, callback) {
     let dateinput = intent.slot.date.value.toLowerCase()
-    if (!dateinput[date]) {
+    if (!dateinput[event.date]) {
         let speechOutput = "Hey! You have no events today!"
         let reprompt = "Better luck next time!"
         let header = "Invalid text."
     } else {
-        let year = dateinput[date].year
-        let month = dateinput[date].month
-        let day = dateinput[date].day
+        let year = dateinput[event.date].year
+        let month = dateinput[event.date].month
+        let day = dateinput[event.date].day
         let speechOutput = year + " " + month + day
             + " Do you want to check the date of other events listed: "
             + "KXCV-KRNW, stressbuster, coffe&career, NWOrchestra, Dodgeball Tournament, Meditation, International Coffee Hour."
         let repromptText = "Do you want more information of events on other days?"
-        // let header = capitalizeFirst(time)
+        let header = event.time
     }
     let shouldEndSession = false
     callback(session.attributes, buildSpeechletResponse(header, speechOutput, repromptText, shouldEndSession))
