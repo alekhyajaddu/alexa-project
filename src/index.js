@@ -34,22 +34,22 @@ let venue = {
         "location": "KXCV-KRNW Facebook Page."
     },
     "stressbuster": {
-        "Location": "The Station, Maryville, MO."
+        "location": "The Station, Maryville, MO."
     },
     "coffee&career": {
-        "Location": "Career Services, Administration Building, NWMSU, MO."
+        "location": "Career Services, Administration Building, NWMSU, MO."
     },
     "NWOrchestra": {
-        "Location": "Ron Houston Center for Performing Arts, Maryville, MO."
+        "location": "Ron Houston Center for Performing Arts, Maryville, MO."
     },
     "Dodgeball Tournament": {
-        "Location": "Student Rec Center, NWMSU, MO."
+        "location": "Student Rec Center, NWMSU, MO."
     },
     "Meditation": {
-        "Location": "JW Jones Student Union, NWMSU, MO."
+        "location": "JW Jones Student Union, NWMSU, MO."
     },
     "International Coffee Hour": {
-        "Location": "BD Owens Library, NWMSU, MO."
+        "location": "BD Owens Library, NWMSU, MO."
     }
 }
 
