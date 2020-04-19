@@ -1,3 +1,4 @@
+/*
 let time = {
     "KXCV-KRNW": {
         "time_zone": "CST",
@@ -115,6 +116,9 @@ let date = {
         "day": "22"
     }
 }
+*/
+
+const event = require('./events.json')
 
 // Route the incoming request based on type (LaunchRequest, IntentRequest,
 // etc.) The JSON body of the request is provided in the event parameter.
@@ -155,6 +159,7 @@ exports.handler = function (event, context) {
         context.fail("Exception: " + e);
     }
 };
+
 
 /**
  * Called when the session starts.
