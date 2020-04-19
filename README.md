@@ -14,10 +14,10 @@ Developers: Conversational AI - Alexa project ( server-side JavaScript)
 
 ## GROUP MEMBERS
 
-1. Annie Chandolu
-2. Alekhya Jaddu
-3. Sushma Chanati
-4. Gundu Pooja
+1. [Annie Chandolu](https://github.com/Annie0sc)
+2. [Alekhya Jaddu](https://github.com/Alekhyajaddu)
+3. [Gundu Pooja](https://github.com/GunduPooja)
+4. [Sushma Chanati])(https://github.com/Sushmachanati)
 
 ### RESOURCES
 
