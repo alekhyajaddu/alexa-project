@@ -6,11 +6,6 @@ Developers: Conversational AI - Alexa project ( server-side JavaScript)
 ![IMAGE]( https://target.scene7.com/is/image/Target/GUEST_9b10b6e0-3d26-4172-a29d-e87d771b8583?wid=488&hei=488&fmt=pjpeg)
 [image source](https://github.com/alekhyajaddu/alexa-google-home-project)
 
-## JAVASCRIPT
-
-- JavaScript is an object orient programming language designed to make web development easier and more attractive.
-- In most cases, JavaScript is used to create responsive, interactive elements for web pages, enhancing the user experience.
-- The only programming language supported by almost all of the popular browsers.
 
 ## GROUP MEMBERS
 
@@ -19,6 +14,12 @@ Developers: Conversational AI - Alexa project ( server-side JavaScript)
 3. [Gundu Pooja](https://github.com/GunduPooja)
 4. [Sushma Chanati](https://github.com/Sushmachanati)
 
+## VidGrid Video Recordings:
+
+1. Sushma - [Introduction](https://app.vidgrid.com/view/Oz0TkPmZucKE)
+2. Alekhya - [Alexa Developer Console](https://app.vidgrid.com/view/5GtIbPHtYgBp)
+3. Annie - [AWS LAMBDA](https://app.vidgrid.com/view/vufvZfatxx2Q)
+4. Pooja - [Amazon Echo, Conclusion](https://app.vidgrid.com/view/DLsHl8ADYnus)
 ### RESOURCES
 
 1. [BitDegree](https://www.bitdegree.org/tutorials/what-is-javascript-used-for/)
